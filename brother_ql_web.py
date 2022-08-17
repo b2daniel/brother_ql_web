@@ -188,8 +188,8 @@ def create_label_grocy_1d(text, **kwargs):
         else:
             text = battery
 
-        text_font_size = 80
-        duedate_font_size = 40
+        text_font_size = 32
+        duedate_font_size = 24
         barcode_height = 120
 
         from barcode.codex import Code128
@@ -288,8 +288,8 @@ def create_label_grocy(text, **kwargs):
     datamatrix = Image.frombytes("RGB", (encoded.width, encoded.height), encoded.pixels)
     datamatrix.save("/tmp/dmtx.png")
 
-    text_font = ImageFont.truetype(kwargs["font_path"], 100)
-    duedate_font = ImageFont.truetype(kwargs["font_path"], 60)
+    text_font = ImageFont.truetype(kwargs["font_path"], 32)
+    duedate_font = ImageFont.truetype(kwargs["font_path"], 24)
     width = kwargs["width"]
     height = 200
     if kwargs["orientation"] == "rotated":
